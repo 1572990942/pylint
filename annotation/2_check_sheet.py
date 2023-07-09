@@ -2,15 +2,14 @@
     * This document is a quick cheat sheet showing how to use type annotations for various common types in Python.
 """
 
+from time import time
+from typing import List, Tuple, Dict, Set, Callable, Iterator, Optional, Union
+
+
 # ---------------------------------------- 1. Variables ----------------------------------------
 # Technically many of the type annotations show bellow are redundant, since mypy can usually infer the type of a variable from it's value.See inference and type annotations(https://mypy.readthedocs.io/en/stable/type_inference_and_annotations.html#type-inference-and-annotations) for more details.
 
 # This is how you declare the type of a variable
-from typing import Callable, Iterator, Optional, Union
-from time import time
-from typing import Optional
-from typing import Union
-from typing import List, Tuple, Dict, Set
 age: int = 1
 
 # You don't need to initialize a variable to annotate it
@@ -88,7 +87,3 @@ def show(value: str, excitement: int = 10) -> None:
 # Note that arguments without a type is dynamically typed (treated as Any), and the function without any annotation not checked
 def untyped(x):
     x.do_something() + 1 + "string"     # no errors
-
-
-
-
